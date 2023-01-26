@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const Excercise = require('./excercise')
+const routineSchema = require('./routine')
 
 const workoutSchema = new mongoose.Schema({
     // add virtuals and options: timestamp
@@ -11,20 +11,8 @@ const workoutSchema = new mongoose.Schema({
     date: {
         type: Date,
     },
-    excercise: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Excercise',
-        required: false,
-        // // name: String,
-        // reps: {
-        //     type: Number,
-        //     default: 0
-        // },
-        // sets: {
-        //     type: Number,
-        //     default: 0
-        // }
-    },
+    days: String,
+    routines: [routineSchema],
     owner: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'

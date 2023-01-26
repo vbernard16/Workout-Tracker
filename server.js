@@ -2,10 +2,12 @@ const mongoose = require('mongoose')
 const db = require('./config/db')
 const express = require('express')
 const app = express()
+const cors = require('cors')
 
 const workoutRoutes = require('./routes/workout-routes')
-const excerciseRoutes = require('./routes/excercise-routes')
+const routineRoutes = require('./routes/routine-routes')
 const userRoutes = require('./routes/user-routes')
+const excerciseRoutes = require('./routes/excercise-routes')
 
 mongoose.set('strictQuery', true)
 
@@ -18,9 +20,9 @@ app.use(express.json())
 
 
 app.use(workoutRoutes)
-app.use(excerciseRoutes)
+app.use(routineRoutes)
 app.use(userRoutes)
-
+app.use(excerciseRoutes)
 
 
 

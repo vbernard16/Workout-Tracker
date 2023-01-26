@@ -15,7 +15,6 @@ const userSchema = new mongoose.Schema({
 {
     timestamps: true,
     toJson: {
-        virtuals: true,
         transform: (_doc, user) => {
             delete user.password
             return user

@@ -1,12 +1,15 @@
 const express = require('express')
+const { requireToken } = require('../config/auth')
 const router = express.Router()
+const handle404 = require('../lib/custom-errors')
+
 
 const Excercise = require('../models/excercise')
 
-// Find all/ Index
+
 router.get('/excercises', (req, res, next) => {
-    // handle404 will be first
     Excercise.find()
+        .then(handle404)
         .then((excercise) => {
             console.log(excercise)
             // use correct status code
@@ -15,31 +18,23 @@ router.get('/excercises', (req, res, next) => {
         .catch(next)
 })
 
-// Find one/ Show
+
 router.get('/excercises/:excerciseId', (req, res, next) => {
     Excercise.findById(req.params.excerciseId)
+        .then(handle404)
         .then((excercise) => {
-            console.log(excercise)
-            return res.status(200).json({ excercise: excercise })
-        })
-        .catch(next)
-})
-// POST
-router.post('/excercises', (req, res, next) => {
-    const newExcercise = req.body.excercise
-    Excercise.insertMany(newExcercise)
-        .then((excercise) => {
-            console.log(newExcercise)
             console.log(excercise)
             return res.status(200).json({ excercise: excercise })
         })
         .catch(next)
 })
 
-router.delete('/excercises', (req, res, next) => {
-    Excercise.deleteMany()
+router.post('/excercises', (req, res, next) => {
+    const input = req.body.excercise
+    Excercise.create(input)
+        .then(handle404)
         .then((excercise) => {
-            res.status(200).json({ excercise: excercise })
+           return res.status(200).json({ excercise: excercise })
         })
         .catch(next)
 })

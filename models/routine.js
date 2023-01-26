@@ -1,9 +1,9 @@
 const mongoose = require('mongoose')
 
-const excerciseSchema = new mongoose.Schema({
+const routineSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: [true, "Please enter a valid excercise"]
+        required: [true, "Please enter a valid routine"]
     },
     type: {
         type: String,
@@ -41,10 +41,23 @@ const excerciseSchema = new mongoose.Schema({
     },
     instructions: {
         type: String
+    },
+    reps: {
+        type: Number,
+        default: 0
+    },
+    sets: {
+        type: Number,
+        default: 0
+    },
+    workout: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Workout'
     }
 })
 
-const Excercise = new mongoose.model('Excercise', excerciseSchema)
+// const Routine = new mongoose.model('Routine', routineSchema)
 
-module.exports = Excercise
+module.exports = routineSchema
 
+// make this a subdocument instead, and reference it in the workout model
