@@ -1,0 +1,31 @@
+{
+  "name": "workout-tracker-server",
+  "version": "1.0.0",
+  "description": "Full stack app that let's you keep track of your workouts",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vbernard16/Workout-Tracker.git"
+  },
+  "author": "Vaughn Bernard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vbernard16/Workout-Tracker/issues"
+  },
+  "homepage": "https://github.com/vbernard16/Workout-Tracker#readme",
+  "dependencies": {
+    "axios": "^1.2.4",
+    "bcrypt": "^5.1.0",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^6.8.4",
+    "passport": "^0.6.0",
+    "passport-jwt": "^4.0.1"
+  }
+}

@@ -26,8 +26,14 @@ Will fill in later
 
 ### Models: User, Workout, Excercise
 
-![ERD](planning/erd/erd.png)
+### User---Workout
+![ERD](planning/erd/user-workout-erd.png)
 
+### User---Excercise
+![ERD](planning/erd/user-excercise-erd.png)
+
+### Workout---Excercise
+![ERD](planning/erd/workout-excersice-erd.png)
 
 ## User Stories
 
@@ -44,7 +50,7 @@ As a user I want to....
     - Each workout will contain an excercise model with a many to many relationship. Each workout-plan can have many excercises and each excercise can, and will, 
         be associated with many workout-plans
     - Post newly created fields to the page and save to database for user's account
-4. Be able to create, edit, or delete an excercise
+4. Be able to only create an excercise
     - A new excercise model will be created for each time the user uses fills in the field for 'add excercise'
         Database to store collection called 'workouts' that on submit, are stored to the collection associated with the user's account
 5. Option to login or create a new account
@@ -64,7 +70,8 @@ As a user I want to....
 ### Ver.2
 
 - See workout library
-    - Drop down list of excersices separated by category: strength-training, cardio, etc.
+- Optional admin privilages that allow an admin to delete an excercise that the user has added to the database
+- Drop down list of excersices separated by category: strength-training, cardio, etc.
 - User profile picture
 
 ### Ver.3
