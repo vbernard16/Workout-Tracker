@@ -5,9 +5,11 @@ const handle404 = require('../lib/custom-errors')
 
 const Workout = require('../models/workout')
 
-// Find all/ Index
+// Index
 router.get('/workouts', requireToken, (req, res, next) => {
-    Workout.find()
+    const userId = req.user._id
+    console.log(req.user)
+    Workout.find({ owner:userId })
         .then(handle404)
         .then((workout) => {
             // use correct status code
@@ -16,7 +18,7 @@ router.get('/workouts', requireToken, (req, res, next) => {
         .catch(next)
 })
 
-// Find one/ Show
+//  Show
 router.get('/workouts/:workoutId', requireToken, (req, res, next) => {
     Workout.findById(req.params.workoutId)
         .then(handle404)

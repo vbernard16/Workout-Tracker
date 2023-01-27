@@ -17,28 +17,12 @@ mongoose.connect(db, {
 })
 
 app.use(express.json())
+app.use(cors({ origin: `http://127.0.0.1:5500` }))
 
-
+app.use(userRoutes)
 app.use(workoutRoutes)
 app.use(routineRoutes)
-app.use(userRoutes)
 app.use(excerciseRoutes)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 app.listen(3000, () => {
