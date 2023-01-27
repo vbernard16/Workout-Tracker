@@ -7,6 +7,17 @@ const Workout = require('../models/workout')
 
 // Find all/ Index
 router.get('/workouts', requireToken, (req, res, next) => {
+    const userId = req.user._id
+    // const userWorkout = workout.userId
+    console.log(`user's workout: ${req.user}`)
+    // console.log(`owner: ${req.owner}`)
+    // console.log(`user: ${req.user}`)
+    // console.log(req.body.workout)
+    // console.log(`user Id: ${userId}`)
+//    console.log(req.user)
+    const workouts = req.body.workout
+    console.log(workouts)
+    // workouts.owner = userId
     Workout.find()
         .then(handle404)
         .then((workout) => {
@@ -27,10 +38,12 @@ router.get('/workouts/:workoutId', requireToken, (req, res, next) => {
 })
 // POST
 router.post('/workouts', requireToken, (req, res, next) => {
-    console.log(req.user)
+    // console.log(req.user)
     const userId = req.user._id
     const newWorkout = req.body.workout
     newWorkout.owner = userId
+    console.log(`userId: ${userId}`)
+    console.log(`newWorkout.owner: ${newWorkout.owner}`)
     Workout.create(newWorkout)
         .then(handle404)
         .then((workout) => {

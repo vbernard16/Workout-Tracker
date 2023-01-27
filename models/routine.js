@@ -7,40 +7,10 @@ const routineSchema = new mongoose.Schema({
     },
     type: {
         type: String,
-        enum: [
-            'strength',
-            "weights",
-            'cardio',
-            'olympic weightlifting',
-            'plyometrics',
-            'powerlifting',
-            'stretching',
-            'strongman'
-    ],
         required: false
     },
     muscle: {
         type: String,
-        enum: ['abdominals',
-            'abductors',
-            'adductors',
-            'biceps',
-            'calves',
-            'chest',
-            'forearms',
-            'glutes',
-           ' hamstrings',
-            'lats',
-            'lower back',
-            'middle back',
-            'neck',
-            'quadriceps',
-           ' traps',
-            'triceps'
-        ]
-    },
-    instructions: {
-        type: String
     },
     reps: {
         type: Number,

@@ -8,9 +8,6 @@ const workoutSchema = new mongoose.Schema({
         type: String,
         default: 'Workout: ' + new Date
     },
-    date: {
-        type: Date,
-    },
     days: String,
     routines: [routineSchema],
     owner: {
