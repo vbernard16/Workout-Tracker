@@ -8,7 +8,6 @@ const Workout = require('../models/workout')
 // Index
 router.get('/workouts', requireToken, (req, res, next) => {
     const userId = req.user._id
-    console.log(req.user)
     Workout.find({ owner:userId })
         .then(handle404)
         .then((workout) => {

@@ -5,10 +5,6 @@ const handle404 = require('../lib/custom-errors')
 const Workout = require('../models/workout')
 
 
-
-// POST
-
-
 router.post('/routines', requireToken, (req, res, next) => {
     const workoutId = req.body.routine.workoutId
     const routineInput = req.body.routine
@@ -27,6 +23,7 @@ router.post('/routines', requireToken, (req, res, next) => {
 
 
 router.patch('/routines/:routineId', requireToken, (req, res, next) => {
+    console.log(req.body)
     const workoutId = req.body.routine.workoutId
     const routineInput = req.body.routine
 
@@ -40,6 +37,19 @@ router.patch('/routines/:routineId', requireToken, (req, res, next) => {
         .then((workout) => {
             res.status(200).json({ workout: workout })
         })
-
 })
+
+// router.delete('/routines/:routineId', requireToken, (req, res, next) => {
+//     Workout.findById(req.params.workoutId)
+//         .then(handle404)
+//         .then((workout) => {
+
+//             workout.deleteOne(req.body.workout)
+//         })
+//         .then((workout) => {
+//             res.status(200).json({ workout: workout })
+//         })
+//         .catch(next)
+// })
+
 module.exports = router
