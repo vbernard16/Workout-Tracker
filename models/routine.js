@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-// possibly rename workout
+
 const routineSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -29,8 +29,7 @@ const routineSchema = new mongoose.Schema({
     }
 })
 
-// const Routine = new mongoose.model('Routine', routineSchema)
+
 
 module.exports = routineSchema
 
-// make this a subdocument instead, and reference it in the workout model
