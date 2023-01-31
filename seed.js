@@ -24,7 +24,7 @@ muscleList.map((muscle) => {
         fetch('https://api.api-ninjas.com/v1/exercises?muscle=' + muscle, {
             method: 'GET',
             headers: { 
-                'X-Api-Key': 'tJMdYgOIxjC1C4hooOO97Q==4l0sIKX6GjLneaYj',
+                'X-Api-Key': '',
                 // 'Accept': 'application/json',
                 // 'Content-Type': 'application/json'
             },
