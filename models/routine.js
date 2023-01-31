@@ -5,16 +5,6 @@ const routineSchema = new mongoose.Schema({
         type: String,
         required: [true, "Please enter a valid routine"]
     },
-    type: {
-        type: String,
-        required: false
-    },
-    muscle: {
-        type: String,
-    },
-    instructions: {
-        type: String
-    },
     reps: {
         type: Number,
         default: 0
@@ -33,3 +23,4 @@ const routineSchema = new mongoose.Schema({
 
 module.exports = routineSchema
 
+// make this a subdocument instead, and reference it in the workout model

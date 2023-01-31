@@ -29,34 +29,13 @@ router.post('/sign-up', (req, res, next) => {
 })
 
 router.post('/sign-in', (req, res, next) => {
-    console.log(`inside the post`)
-    console.log(req.body)
     User.findOne({username: req.body.credentials.username})
         .then(handle404)
         .then((user) => createUserToken(req, user))
-        // .then((token) => console.log(token))
         .then(token => res.json({ token: token }))
         .catch(next)
 })
 
 
-// delete these routes before deployment
-// router.get('/sign-in', (req, res, next) => {
-//     User.find()
-//         .then(handle404)
-//         .then((user) => {
-//             res.status(200).json({ user: user })
-//         })
-//         .catch(next)
-// })
-
-// router.get('/sign-in/:userId', (req, res, next) => {
-//     User.findById(req.params.userId)
-//         .then(handle404)
-//         .then((user) => {
-//             res.status(200).json({ user: user })
-//         })
-//         .catch(next)
-// })
 
 module.exports = router

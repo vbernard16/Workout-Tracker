@@ -39,17 +39,4 @@ router.patch('/routines/:routineId', requireToken, (req, res, next) => {
         })
 })
 
-// router.delete('/routines/:routineId', requireToken, (req, res, next) => {
-//     Workout.findById(req.params.workoutId)
-//         .then(handle404)
-//         .then((workout) => {
-
-//             workout.deleteOne(req.body.workout)
-//         })
-//         .then((workout) => {
-//             res.status(200).json({ workout: workout })
-//         })
-//         .catch(next)
-// })
-
 module.exports = router

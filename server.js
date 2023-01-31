@@ -11,13 +11,15 @@ const excerciseRoutes = require('./routes/excercise-routes')
 
 mongoose.set('strictQuery', true)
 
+const PORT = process.env.PORT || 3000
+
 mongoose.connect(db, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 })
 
 app.use(express.json())
-app.use(cors({ origin: `http://127.0.0.1:5500` }))
+app.use(cors({ origin: process.env.CLIENT_ORIGIN || `http://127.0.0.1:5500` }))
 
 app.use(userRoutes)
 app.use(workoutRoutes)
@@ -25,7 +27,7 @@ app.use(routineRoutes)
 app.use(excerciseRoutes)
 
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
     console.log('Server running on port 3000')
 })
 

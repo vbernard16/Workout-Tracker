@@ -12,7 +12,6 @@ router.get('/excercises', (req, res, next) => {
     Excercise.find({muscle: muscleInput})
         .then(handle404)
         .then((excercise) => {
-            // use correct status code
             return res.status(200).json({ excercise: excercise })
         })
         .catch(next)
