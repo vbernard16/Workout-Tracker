@@ -13,7 +13,7 @@ const routineSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
-    workout: {
+    workout: { // i think you wanted this to point at exercise, no ? routine is a subdocument of workout already which makes sense because YOUR routine of the same exercise vs mine will be different doing this creates a very weird many to many relationship mess where one workout can have a routine which points to another workout etc. 
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Workout'
     }

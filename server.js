@@ -7,7 +7,7 @@ const cors = require('cors')
 const workoutRoutes = require('./routes/workout-routes')
 const routineRoutes = require('./routes/routine-routes')
 const userRoutes = require('./routes/user-routes')
-const excerciseRoutes = require('./routes/excercise-routes')
+const excerciseRoutes = require('./routes/excercise-routes') // exercise// exercise
 
 mongoose.set('strictQuery', true)
 
@@ -25,7 +25,7 @@ app.use(cors({ origin: process.env.CLIENT_ORIGIN || `http://127.0.0.1:5500` }))
 app.use(userRoutes)
 app.use(workoutRoutes)
 app.use(routineRoutes)
-app.use(excerciseRoutes)
+app.use(excerciseRoutes) // exercise
 
 
 app.listen(PORT, () => {

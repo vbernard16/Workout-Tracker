@@ -5,7 +5,7 @@ const handle404 = require('../lib/custom-errors')
 
 const Workout = require('../models/workout')
 
-// Index
+// Index // i like these labeling comments a lot : do more ! 
 router.get('/workouts', requireToken, (req, res, next) => {
     const userId = req.user._id
     Workout.find({ owner:userId })
@@ -25,7 +25,7 @@ router.get('/workouts/:workoutId', requireToken, (req, res, next) => {
             return res.status(200).json({ workout: workout })
         })
         .catch(next)
-})
+}) // inconsistent white space, add a blank line here before the next route 
 // POST
 router.post('/workouts', requireToken, (req, res, next) => {
     const userId = req.user._id
@@ -59,11 +59,11 @@ router.delete('/workouts/:workoutId', requireToken, (req, res, next) => {
             workout.deleteOne(req.body.workout)
         })
         .then((workout) => {
-            res.status(204).json({ workout: workout })
+            res.status(204).json({ workout: workout }) // should a delete return any json ? 
         })
         .catch(next)
 })
-
+// inconsistent white space
 
 
 module.exports = router
