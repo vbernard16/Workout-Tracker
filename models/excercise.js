@@ -1,12 +1,12 @@
 const mongoose = require('mongoose')
 
-const excerciseSchema = new mongoose.Schema({
+const excerciseSchema = new mongoose.Schema({ // exercise - this typo could be the source of a lot of grief 
     name: {
         type: String,
-        required: [true, "Please enter a valid excercise"]
+        required: [true, "Please enter a valid excercise"]// exercise
     },
     type: {
-        type: String,
+        type: String, 
         enum: [
             'strength',
             "weights",
@@ -16,12 +16,12 @@ const excerciseSchema = new mongoose.Schema({
             'powerlifting',
             'stretching',
             'strongman'
-    ],
+    ],// incorrect indentation , closes enum not 'type'
         required: false
     },
     muscle: {
         type: String,
-        enum: ['abdominals',
+        enum: ['abdominals', // i believe abdominal is both singular and plural, like deer 
             'abductors',
             'adductors',
             'biceps',
@@ -29,13 +29,13 @@ const excerciseSchema = new mongoose.Schema({
             'chest',
             'forearms',
             'glutes',
-           ' hamstrings',
+           ' hamstrings', // mind your indentation - missing a space here
             'lats',
             'lower back',
             'middle back',
             'neck',
             'quadriceps',
-           ' traps',
+           ' traps', // and here
             'triceps'
         ]
     },
@@ -44,7 +44,6 @@ const excerciseSchema = new mongoose.Schema({
     }
 })
 
-const Excercise = new mongoose.model('Excercise', excerciseSchema)
+const Excercise = new mongoose.model('Excercise', excerciseSchema) // exercise// exercise// exercise
 
-module.exports = Excercise
-
+module.exports = Excercise // exercise
