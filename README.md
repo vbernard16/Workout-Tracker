@@ -14,31 +14,20 @@ So click the link in the "Getting Started" section below, sign up and get your f
 
 ## How to run
 
-Will fill in later
+To get started, click [this] link. You'll be taken to the sign-in/sign-up page. Once you create an account, sign in using your account info.
 
-## Wire Frames
+Once you're logged in, you're ready to begin your fitness journey.
 
-### Sign In 
-![Sign In](planning/wireframes/sign-in.png)
-
-### Sign Up 
-![Sign Up](planning/wireframes/sign-up-page.png)
-
-### User Homepage
-![Homepage](planning/wireframes/home-page.png)
-
-### Workout Planner 
-![Workout Page](planning/wireframes/workout-planner-page.png)
 
 ## ERD 
 
-### Models: User, Workout, Excercise
+### Models: User, Workout, Routine
 
 ### User---Workout
 ![ERD](erd/user%26workoutErd.png)
 
 
-### Workout---Excercise
+### Workout---Routine
 ![ERD](erd/workout%26RoutineErd.png)
 
 ## Routes Table
@@ -47,15 +36,15 @@ Routes showing endpoints for "workout" and "user" models, as well as the "routin
 
 | Name        | Path          | HTTP Verb | Purpose                                       |
 |-------------|---------------|-----------|-----------------------------------------------|
-|             |/workouts      | GET       |Displays all users workouts                    |
-|             |/workouts/:id  | GET       |Displays one of user's workouts                |
-|             |/workouts      | POST      |Adds new workout to user's profile             |
-|             |/workouts/:id  | PATCH     |Updates one of user's workouts                 |
-|             |/workouts/:id  | DELETE    |Delete one of user's workouts                  |
-|             |/sign-in       | POST      |Signs in user                                  |
-|             |/sign-up       | POST      |Signs user up with new profile                 |
-|             |/routines      | POST      |Adds new excercise routine to workout          |  
-|             |/routines/:id  | PATCH     |Updates an existing workout's excercise routine|
+| Index       |/workouts      | GET       |Displays all users workouts                    |
+| Show        |/workouts/:id  | GET       |Displays one of user's workouts                |
+| Add         |/workouts      | POST      |Adds new workout to user's profile             |
+| Update      |/workouts/:id  | PATCH     |Updates one of user's workouts                 |
+| Destroy     |/workouts/:id  | DELETE    |Delete one of user's workouts                  |
+| Add         |/sign-in       | POST      |Signs in user                                  |
+| Add         |/sign-up       | POST      |Signs user up with new profile                 |
+| Add         |/routines      | POST      |Adds new excercise routine to workout          |  
+| Update      |/routines/:id  | PATCH     |Updates an existing workout's excercise routine|
 
 
 

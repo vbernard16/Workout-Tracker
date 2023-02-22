@@ -9,7 +9,6 @@ const { createUserToken } = require('../config/auth')
 const router = express.Router()
 
 router.post('/sign-up', (req, res, next) => {
-    if(req.body.credentials.password === req.body.credentials.passwordConfirmation){
         bcrypt.hash(req.body.credentials.password, saltRounds)
         .then(hashedPassword => {
             return {
@@ -22,9 +21,6 @@ router.post('/sign-up', (req, res, next) => {
             res.status(201).json({ user: user })
         })
         .catch(next)
-    }else{
-        res.sendStatus(400)
-    }
     
 })
 
